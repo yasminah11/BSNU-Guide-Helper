@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cairo:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 43% 96%; /* #F0F3FA */
+    --foreground: 216 40% 37%; /* #395886 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 216 40% 37%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 40% 37%;
+
+    --primary: 216 40% 37%; /* #395886 */
+    --primary-foreground: 222 43% 96%;
+
+    --secondary: 215 51% 59%; /* #628ECB */
+    --secondary-foreground: 222 43% 96%;
+
+    --muted: 218 43% 88%; /* #D5DEEF */
+    --muted-foreground: 216 40% 45%;
+
+    --accent: 216 63% 71%; /* #8AAEE0 */
+    --accent-foreground: 216 40% 37%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 218 43% 88%; /* #D5DEEF */
+    --input: 218 43% 88%;
+    --ring: 216 40% 37%;
+
+    --radius: 1.25rem;
+
+    --hero-gradient: linear-gradient(135deg, #395886 0%, #628ECB 50%, #8AAEE0 100%);
+    --card-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.04), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+    --card-shadow-hover: 0 25px 50px -12px rgb(0 0 0 / 0.08);
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 213 31% 94%;
+
+    --card: 222 47% 12%;
+    --card-foreground: 213 31% 94%;
+
+    --popover: 222 47% 12%;
+    --popover-foreground: 213 31% 94%;
+
+    --primary: 217 91% 65%;
+    --primary-foreground: 222 47% 8%;
+
+    --secondary: 222 47% 16%;
+    --secondary-foreground: 213 31% 94%;
+
+    --muted: 222 47% 16%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 174 75% 50%;
+    --accent-foreground: 222 47% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 224 76% 55%;
+
+    --hero-gradient: linear-gradient(135deg, hsl(222, 47% , 6%) 0%, hsl(222, 47%, 10%) 50%, hsl(222, 47%, 14%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased transition-colors duration-500;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-foreground;
+  }
+}
+
+@layer utilities {
+  .hero-gradient {
+    background: var(--hero-gradient);
+  }
+
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20;
+  }
+  
+  .dark .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .glass-input {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 focus:border-white/30 focus:bg-white/10 transition-all duration-300;
+  }
+
+  .section-padding {
+    @apply py-24 px-6;
+  }
+
+  .container-max {
+    @apply max-w-5xl mx-auto;
+  }
+
+  .shadow-soft {
+    box-shadow: var(--card-shadow);
+  }
+
+  .shadow-soft-hover:hover {
+    box-shadow: var(--card-shadow-hover);
+  }
+}
